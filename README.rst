@@ -15,15 +15,37 @@ An Integrated Development Environment(IDE) for quantum applications hosted in
 The Leap IDE default workspace is a development environment pre-configured with
 Ocean software and some typically used libraries such as Matplotlib. It also
 includes D-Wave extensions such as the problem inspector and a navigation
-flyout menu. Your SAPI API token is set as an environment variable.
+flyout menu to provide quick links to D-Wave resources.
 
-Creating a Workspace from Scratch
----------------------------------
+Getting Started
+---------------
+
+Open the IDE in one of the following ways:
+
+* Log in to your `Leap <https://cloud.dwavesys.com/leap>`_ account, open the Workspaces
+  page, and click on an example.
+* In the address bar of your browser, prefix the URL of your GitHub repository
+  (or a particular pull request, branch, or issue) with, ``https://ide.dwavesys.io/#``,
+  for example, ``https://ide.dwavesys.io/#https://github.com/jane/myquantumapp``.
+
+The IDE opens the repository files in a Docker container with a full developer
+environment.
+
+Start by selecting an example, opening and running it.
+
+Tutorial videos are available here: <<NEED LINK TO OUR VIDEOS>>
+
+Developing Applications
+-----------------------
 
 The recommended workflow for new application development is to start from a template
-or example workspace and modify it. If you prefer to create your workspace from scratch,
-consider including some or all of the defaults:
+or example workspace and modify it.
 
-* Docker file: <where is this downloaded from and tag>
-* Leap token: <command to set token as env variable
-* Extensions: problem inspector, navigation flyout panel, searchable examples
+On the Workspaces page, the menu under your User Name on the top righthand
+corner lets you edit the following information:
+
+* Access control: to save changes, you need to grant the IDE permission to write
+  to your GitHub repo or, if you started with a D-Wave example, create a fork.
+* Environmental variables: the IDE automatically sets your SAPI token (token used
+  to authenticate client sessions when you connect to remote solvers such as D-Wave
+  quantum computers and hybrid solvers).
