@@ -33,7 +33,7 @@ environment.
 
 Start by selecting an example, opening and running it.
 
-Tutorial videos are available here: <<NEED LINK TO OUR VIDEOS>>
+D-Wave tutorial videos are available on YouTube.
 
 Developing Applications
 -----------------------
