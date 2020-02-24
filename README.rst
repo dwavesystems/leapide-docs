@@ -33,7 +33,7 @@ environment.
 
 Start by selecting an example, opening and running it.
 
-D-Wave tutorial videos are available on YouTube.
+D-Wave tutorial videos are available on YouTube; for example, `Leap IDE <https://www.youtube.com/watch?v=62gDQ14pjwM>`.
 
 Developing Applications
 -----------------------
