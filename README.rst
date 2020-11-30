@@ -46,6 +46,56 @@ corner lets you edit the following information:
 
 * Access control: to save changes, you need to grant the IDE permission to write
   to your GitHub repo or, if you started with a D-Wave example, create a fork.
-* Environmental variables: the IDE automatically sets your SAPI token (token used
+* Environmental variables such as your SAPI token (token used
   to authenticate client sessions when you connect to remote solvers such as D-Wave
   quantum computers and hybrid solvers).
+
+Configuration
+-------------
+
+Some more advanced configurations include the following:
+
+Repository Requirements
+~~~~~~~~~~~~~~~~~~~~~~~
+
+You can create a YAML file to open a repository with your required packages
+loaded as follows::
+
+  tasks:
+   - init: pip install -r requirements.txt
+
+User Dockerfile
+~~~~~~~~~~~~~~~
+
+The IDE uses a Docker image, based on python:3.7-slim, available within
+the IDE as ``dwavesys/leapide:latest``. To build on top of it, your Dockerfile
+should look like this::
+
+  FROM dwavesys/leapide:latest
+
+  USER root
+
+  # install system packages
+  RUN apt-get update \
+      && apt-get install -yq --no-install-recommends \
+          clang \
+          libboost-dev \
+      && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*
+
+  # install system-wide python package
+  RUN pip install --no-cache-dir \
+          dwave-ocean-sdk==4.0.0 \
+      && rm -rf /tmp/*
+
+API token
+~~~~~~~~~
+
+The IDE periodically imports your API token from
+`Leap <https://cloud.dwavesys.com/leap/>`_. If you reset your token
+on the Leap dashboard, your new token is automatically updated in the IDE within
+a minute.
+
+Every workspace you create is pinned to a project in your account. If your account
+has access to multiple projects, the IDE imports the API token for the project
+pinned to the current workspace. You can override the imported API token by
+setting the ``DWAVE_API_TOKEN`` environment variable in the IDE.
