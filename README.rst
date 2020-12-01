@@ -58,8 +58,10 @@ Some more advanced configurations include the following:
 Repository Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-You can create a YAML file to open a repository with your required packages
-loaded as follows::
+To have the IDE open a repository with your required packages loaded, create in
+the repository's root directory a YAML file named
+`.gitpod.yml <https://www.gitpod.io/docs/config-gitpod-file/>`_ with the
+following tasks section::
 
   tasks:
    - init: pip install -r requirements.txt
@@ -69,7 +71,9 @@ User Dockerfile
 
 The IDE uses a Docker image, based on python:3.7-slim, available within
 the IDE as ``dwavesys/leapide:latest``. To build on top of it, your Dockerfile
-should look like this::
+(which must be referenced from
+`.gitpod.yml <https://www.gitpod.io/docs/config-docker>`_\ ) should look like
+this::
 
   FROM dwavesys/leapide:latest
 
