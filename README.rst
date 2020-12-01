@@ -35,6 +35,19 @@ Start by selecting an example, opening and running it.
 
 D-Wave tutorial videos are available on YouTube; for example, `Leap IDE <https://www.youtube.com/watch?v=62gDQ14pjwM>`.
 
+Every workspace you create is pinned to a project in your account, and your usage
+quota in that project and its API token are imported into the workspace. Users
+with accounts that have access to multiple projects can see the pinned project
+from within the IDE by using the ``leapide`` command\ [#]_ from a terminal::
+
+  Leap IDE /workspace/antenna-selection $ leapide workspace
+  Workspace ID: abc12345-1234-1a2b-3c4d5-123456789012
+  Project: Developer (id=123, code=DEV)
+  Leap IDE /workspace/antenna-selection $
+
+.. [#]
+  The ``leapide --help`` command prints a description of the command.
+
 Developing Applications
 -----------------------
 
